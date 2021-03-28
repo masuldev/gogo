@@ -149,6 +149,7 @@ func Example_sliceCap() {
 func Example_sliceCopy() {
 	src := []int{30, 20, 50, 10, 40}
 	dest := make([]int, len(src))
+	anotherDest := append([]int(nil), src...)
 
 	copy(dest, src)
 
@@ -157,6 +158,8 @@ func Example_sliceCopy() {
 	}
 
 	fmt.Println(dest)
+	fmt.Println(anotherDest)
 	// Output:
+	// [30 20 50 10 40]
 	// [30 20 50 10 40]
 }
